@@ -41,7 +41,7 @@ function Login() {
     <div className="login">
       <nav className="navbar">
         <div className="navbar__container">
-          <h1 className="navbar__title">Subtitle Plug</h1>
+          <h1 className="navbar__title">SubtitlePlug.com</h1>
           <div className="navbar__links">
             <a
               href="mailto:thesubtitleplug@gmail.com?subject=support"
@@ -107,25 +107,40 @@ function Login() {
                 that you won't get back, so we have made the process of adding
                 subtitles to your videos extremely simple. Your time is valuable
               </p>
-              <GoogleLogin
-                clientId={clientId}
-                render={(renderProps) => (
-                  <button
-                    className="login__google--button"
-                    onClick={renderProps.onClick}
-                    onMouseOver={(e) => {
-                      navigate("/");
-                    }}
-                    disabled={renderProps.disabled}
-                  >
-                    Continue With Google
-                  </button>
-                )}
-                buttonText="Continue With Google"
-                onSuccess={responseGoogle}
-                onFailure={responseGoogle}
-                cookiePolicy={"single_host_origin"}
-              />
+              <div className="login__button--container">
+                <GoogleLogin
+                  clientId={clientId}
+                  render={(renderProps) => (
+                    <button
+                      className="login__google--button"
+                      onClick={renderProps.onClick}
+                      onMouseOver={(e) => {
+                        navigate("/");
+                      }}
+                      disabled={renderProps.disabled}
+                    >
+                      Continue With Google
+                    </button>
+                  )}
+                  buttonText="Continue With Google"
+                  onSuccess={responseGoogle}
+                  onFailure={responseGoogle}
+                  cookiePolicy={"single_host_origin"}
+                />
+                <button
+                  className="navbar__button bDiscord"
+                  // onClick={(e) => {
+                  //   window.open("https://discord.gg/2hst8cb7uY%22,%22_blank%22");
+                  // }}
+                >
+                  <h1 className="bDiscord--text">Join The Discord</h1>
+
+                  <img
+                    className="navbar__discord--icon"
+                    src="https://cdn.discordapp.com/attachments/1038900522100477992/1038910960569688194/discord-mark-white.png"
+                  ></img>
+                </button>
+              </div>
             </div>
 
             <div className="login__img--container">
@@ -139,7 +154,7 @@ function Login() {
         <footer className="login__footer">
           <div className="login__footer--container">
             <a className="terms" href="/">
-              <p className="terms">terms</p>
+              <p className="terms">Terms & Conditions</p>
             </a>
             <p className="terms">thesubtitleplug@gmail.com</p>
           </div>
